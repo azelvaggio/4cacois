@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti, mi amor 🤍</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif;background:#09070b;color:#fff;overflow-x:hidden}
+body{display:flex;align-items:center;justify-content:center;padding:28px 16px;background:radial-gradient(circle at 50% 15%,#33202d 0,#160e18 35%,#09070b 75%)}
+.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden}.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.6;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.9;transform:scale(1.4)}}
+.container{width:min(900px,100%);text-align:center;position:relative;z-index:2}.intro{animation:fadeUp 1.8s ease both}.small{letter-spacing:4px;text-transform:uppercase;font-size:11px;color:#d9b9c8;margin-bottom:22px}.heart{font-size:38px;animation:pulse 2s infinite}.title{font-size:clamp(30px,6vw,62px);font-weight:400;line-height:1.1;margin:12px 0 20px}.title em{font-style:normal;color:#f3d9e5}.phrase{max-width:720px;margin:0 auto 32px;font-size:clamp(18px,3vw,27px);line-height:1.55;color:#eee1e7}.date{font-size:13px;letter-spacing:2px;color:#bca6b1;margin-bottom:28px}
+.video-wrap{position:relative;border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:7px;background:rgba(255,255,255,.04);box-shadow:0 20px 70px rgba(0,0,0,.55);animation:fadeUp 2.2s .4s ease both}.video-wrap:before,.video-wrap:after{content:'♡';position:absolute;color:#e7bfd0;font-size:26px;opacity:.75}.video-wrap:before{left:-12px;top:18px}.video-wrap:after{right:-12px;bottom:18px}.video{width:100%;display:block;border-radius:17px;background:#000;max-height:75vh}.ending{margin-top:32px;font-size:21px;color:#f1dce5;line-height:1.5;animation:fadeUp 2s 1s ease both}.ending span{display:block;margin-top:10px;font-size:13px;letter-spacing:2px;color:#ad98a3}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.petal{position:fixed;top:-20px;color:#d9a9bc;opacity:.55;font-size:15px;pointer-events:none;animation:fall linear forwards;z-index:1}@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<main class="container">
+<section class="intro">
+<div class="small">PARA EL AMOR DE MIS VIDAS</div>
+<div class="heart">♡</div>
+<h1 class="title">4 meses de <em>nosotras</em></h1>
+<p class="phrase">“4 meses siendo la más afortunada de poder llamarte mi novia, y 6 de la noche más inolvidable de mi vida. Si pudiera volver a aquella noche, volvería a elegirte a ti, una y mil veces.”</p>
+<div class="date">CON TODO MI AMOR · SIEMPRE</div>
+</section>
+<div class="video-wrap"><video class="video" controls playsinline preload="metadata"><source src="video.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video></div>
+<div class="ending">Te amo esposa jonibí. 🤍<span>Nosotras, siempre.</span></div>
+</main>
+<script>
+const stars=document.getElementById('stars');for(let i=0;i<70;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';s.style.animationDuration=(2+Math.random()*4)+'s';stars.appendChild(s)}
+function petal(){const p=document.createElement('div');p.className='petal';p.textContent=Math.random()>.5?'♡':'✦';p.style.left=Math.random()*100+'vw';p.style.fontSize=(10+Math.random()*12)+'px';p.style.animationDuration=(7+Math.random()*7)+'s';p.style.setProperty('--drift',(Math.random()*160-80)+'px');document.body.appendChild(p);setTimeout(()=>p.remove(),15000)}setInterval(petal,700);
+</script>
+</body>
+</html>
